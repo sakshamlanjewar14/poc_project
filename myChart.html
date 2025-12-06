@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maharashtra Aadhaar Operator Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:20px; background:#f4f6f9;}
+    h1 {text-align:center; color:#1e3799;}
+    .chart-container {max-width:1200px; margin:30px auto; background:white; padding:30px; border-radius:15px; box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+    .loading {text-align:center; font-size:18px; color:#e74c3c; padding:20px;}
+  </style>
+</head>
+<body>
+
+  <h1>Maharashtra Aadhaar Operator Statistics</h1>
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+  <div class="loading" id="loading">Loading data from operator.json...</div>
+
+  <script>
+    fetch('operator.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status} - operator.json not found or blocked`);
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('loading').style.display = 'none';
+
+        const labels = data.map(d => d.district);
+        const newEnroll = data.map(d => d.newEnrollment);
+        const mandUpdate = data.map(d => d.mandatoryUpdate);
+        const demoUpdate = data.map(d => d.demographicUpdate);
+        const bioUpdate = data.map(d => d.biometricUpdate);
+        const total = data.map(d => d.total);
+
+        new Chart(document.getElementById('myChart'), {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              { label: 'New Enrollment',       data: newEnroll,    backgroundColor: 'rgba(54, 162, 235, 0.9)' },
+              { label: 'Mandatory Update',     data: mandUpdate,   backgroundColor: 'rgba(255, 159, 64, 0.9)' },
+              { label: 'Demographic Update',   data: demoUpdate,   backgroundColor: 'rgba(75, 192, 192, 0.9)' },
+              { label: 'Biometric Update',     data: bioUpdate,    backgroundColor: 'rgba(255, 99, 132, 0.9)' },
+              {
+                label: 'Total Operators',
+                data: total,
+                type: 'line',
+                borderColor: '#27ae60',
+                backgroundColor: '#27ae60',
+                borderWidth: 5,
+                pointRadius: 6,
+                fill: false
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: 'top' },
+              tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+              y: { beginAtZero: true }
+            }
+          }
+        });
+      })
+      .catch(err => {
+        document.getElementById('loading').innerHTML = 
+          `<strong style="color:red;">Chart Not Loading</strong><br><br>
+           Error: ${err.message}<br><br>
+           Common fixes:<br>
+           1. Both files must be in the <strong>same folder</strong><br>
+           2. File name must be exactly <strong>operator.json</strong> (lowercase)<br>
+           3. Open this page directly (not from file:// if blocked)`;
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

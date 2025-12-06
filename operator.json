@@ -1,0 +1,20 @@
+[
+  {"sr":1,"district":"Ahilya Nagar","newEnrollment":747,"mandatoryUpdate":3445,"demographicUpdate":7724,"biometricUpdate":8644,"total":20560},
+  {"sr":2,"district":"Bhandara","newEnrollment":242,"mandatoryUpdate":554,"demographicUpdate":1814,"biometricUpdate":2308,"total":4918},
+  {"sr":3,"district":"Dhule","newEnrollment":3752,"mandatoryUpdate":4305,"demographicUpdate":20868,"biometricUpdate":12288,"total":41213},
+  {"sr":4,"district":"Gadchiroli","newEnrollment":310,"mandatoryUpdate":227,"demographicUpdate":2075,"biometricUpdate":1017,"total":3629},
+  {"sr":5,"district":"Gondia","newEnrollment":1200,"mandatoryUpdate":1542,"demographicUpdate":4335,"biometricUpdate":6989,"total":14066},
+  {"sr":6,"district":"Hingoli","newEnrollment":564,"mandatoryUpdate":1156,"demographicUpdate":3348,"biometricUpdate":11332,"total":16400},
+  {"sr":7,"district":"Jalgaon","newEnrollment":47,"mandatoryUpdate":111,"demographicUpdate":647,"biometricUpdate":519,"total":1324},
+  {"sr":8,"district":"Jalna","newEnrollment":512,"mandatoryUpdate":1026,"demographicUpdate":3654,"biometricUpdate":3913,"total":9105},
+  {"sr":9,"district":"Kolhapur","newEnrollment":8514,"mandatoryUpdate":11742,"demographicUpdate":49772,"biometricUpdate":35348,"total":105376},
+  {"sr":10,"district":"Nandurbar","newEnrollment":2200,"mandatoryUpdate":2043,"demographicUpdate":10207,"biometricUpdate":6003,"total":20453},
+  {"sr":11,"district":"Nashik","newEnrollment":6329,"mandatoryUpdate":8210,"demographicUpdate":32154,"biometricUpdate":20897,"total":67590},
+  {"sr":12,"district":"Palghar","newEnrollment":4744,"mandatoryUpdate":4420,"demographicUpdate":18298,"biometricUpdate":12736,"total":40198},
+  {"sr":13,"district":"Raigad","newEnrollment":6093,"mandatoryUpdate":7646,"demographicUpdate":20757,"biometricUpdate":28368,"total":62864},
+  {"sr":14,"district":"Ratnagiri","newEnrollment":276,"mandatoryUpdate":904,"demographicUpdate":1561,"biometricUpdate":1759,"total":4500},
+  {"sr":15,"district":"Sindhudurg","newEnrollment":541,"mandatoryUpdate":1283,"demographicUpdate":3840,"biometricUpdate":3885,"total":9549},
+  {"sr":16,"district":"Thane","newEnrollment":7420,"mandatoryUpdate":5904,"demographicUpdate":26403,"biometricUpdate":21797,"total":61524},
+  {"sr":17,"district":"Wardha","newEnrollment":3,"mandatoryUpdate":7,"demographicUpdate":1,"biometricUpdate":10,"total":21},
+  {"sr":18,"district":"Washim","newEnrollment":198,"mandatoryUpdate":134,"demographicUpdate":1459,"biometricUpdate":1213,"total":3004}
+]
